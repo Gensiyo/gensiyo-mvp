@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Menu, X, User, LogIn } from 'lucide-react'
+import { Menu, X, User, LogIn, Brain, BarChart3, Cog, Building2, Mail, Users, Beaker } from 'lucide-react'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -18,6 +18,128 @@ export default function Home() {
     { id: 'community', name: '🌐 社区' },
     { id: 'contact', name: '📞 联系我们' }
   ]
+
+  if (currentPage === 'ai') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+        <nav className="bg-slate-900/80 border-b border-slate-700/50 p-4">
+          <div className="flex items-center">
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className="flex items-center cursor-pointer"
+            >
+              <div className="w-8 h-8 mr-3">
+                <img src="/gensiyo-logo.svg" alt="Gensiyo Logo" className="w-full h-full" />
+              </div>
+              <span className="text-xl font-bold text-slate-200">Gensiyo</span>
+            </button>
+          </div>
+        </nav>
+        
+        <div className="min-h-screen py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <Brain className="w-16 h-16 text-blue-400 mx-auto mb-6" />
+              <h1 className="text-4xl font-bold text-slate-200 mb-4">AI智能协同</h1>
+              <p className="text-xl text-slate-400">
+                多AI模型协作，为您提供最智能的认知分析和决策支持
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">Claude集成</h3>
+                <p className="text-slate-400 mb-4">深度推理与认知分析专家</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    逻辑推理
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    文本分析
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    认知洞察
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">ChatGPT协同</h3>
+                <p className="text-slate-400 mb-4">创意思维与对话交互伙伴</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    创意生成
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    问答对话
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    知识整合
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">认知适配引擎</h3>
+                <p className="text-slate-400 mb-4">基于个人认知模式的AI个性化</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    模式识别
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    个性化回应
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    学习偏好适配
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">群体智能</h3>
+                <p className="text-slate-400 mb-4">集体认知与协作决策系统</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    集群分析
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    协作推理
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    集体洞察
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (currentPage === 'login') {
     return (
@@ -256,7 +378,7 @@ export default function Home() {
                 Gensiyo
               </h1>
               <p className="text-xl text-slate-400 mb-12">
-                AI驱动的认知智能平台 - 登录页和个人页已完成
+                AI驱动的认知智能平台 - AI协同页面已完善
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -280,8 +402,8 @@ export default function Home() {
                   onClick={() => setCurrentPage('ai')}
                   className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300 cursor-pointer"
                 >
-                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🧠 AI协同</h3>
-                  <p className="text-slate-400">AI智能协作平台</p>
+                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🤖 AI协同</h3>
+                  <p className="text-slate-400">多AI模型协作平台</p>
                 </div>
               </div>
             </div>
