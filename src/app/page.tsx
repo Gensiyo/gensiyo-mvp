@@ -1,26 +1,35 @@
-import Link from 'next/link'
+'use client'
 
-export default function HomePage() {
+import React, { useState } from 'react'
+import { Menu, X, Brain, BarChart3, Cog, Building2, Mail, Globe } from 'lucide-react'
+
+export default function Home() {
+  const [currentPage, setCurrentPage] = useState('home')
+
   return (
-    <div>
-      <div style={{position: 'fixed', top: 0, left: 0, right: 0, backgroundColor: 'black', color: 'white', padding: '10px', zIndex: 1000}}>
-        <span style={{color: 'white', marginRight: '20px'}}>🏠 首页 (当前页面)</span>
-        <Link href='/cognitive-test' style={{color: 'yellow', marginRight: '20px', textDecoration: 'none'}}>🧠 认知测试</Link>
-        <Link href='/ai-collaboration' style={{color: 'yellow', textDecoration: 'none'}}>🤖 AI协同</Link>
-      </div>
-      <div style={{paddingTop: '60px', background: 'linear-gradient(to bottom right, #1e293b, #1e40af)', minHeight: '100vh', color: 'white', textAlign: 'center', padding: '80px 20px 20px 20px'}}>
-        <h1 style={{fontSize: '3rem', fontWeight: 'bold', marginBottom: '2rem'}}>GENSIYO</h1>
-        <p style={{fontSize: '1.2rem', marginBottom: '1rem'}}>认知驱动的基础设施</p>
-        <p style={{marginBottom: '2rem'}}>协同智能，编排未来</p>
-        <div style={{marginTop: '3rem'}}>
-          <Link href='/cognitive-test' style={{display: 'inline-block', backgroundColor: '#f59e0b', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', marginRight: '1rem'}}>
-            🧠 立即体验认知测试
-          </Link>
-          <Link href='/ai-collaboration' style={{display: 'inline-block', backgroundColor: '#8b5cf6', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none'}}>
-            🤖 体验AI协同中枢
-          </Link>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+      <nav className="bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-sm">G</span>
+              </div>
+              <span className="text-xl font-bold text-slate-200">Gensiyo</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent">
+            Gensiyo
+          </h1>
+          <p className="text-xl text-slate-400">专业沉思型设计 - 智能化企业协同平台</p>
         </div>
       </div>
     </div>
   )
 }
+
