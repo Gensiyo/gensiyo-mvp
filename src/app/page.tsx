@@ -37,16 +37,16 @@ export default function Home() {
         </nav>
         
         <div className="min-h-screen py-20 px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <Brain className="w-16 h-16 text-blue-400 mx-auto mb-6" />
-              <h1 className="text-4xl font-bold text-slate-200 mb-4">AI智能协同</h1>
+              <h1 className="text-4xl font-bold text-slate-200 mb-4">多AI智能协同</h1>
               <p className="text-xl text-slate-400">
-                多AI模型协作，为您提供最智能的认知分析和决策支持
+                集成Claude、ChatGPT、Gemini等多AI模型，为您提供最全面的智能协作体验
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-4">
                   <Brain className="w-6 h-6 text-white" />
@@ -92,6 +92,28 @@ export default function Home() {
               </div>
 
               <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">Gemini协作</h3>
+                <p className="text-slate-400 mb-4">Google先进AI的多模态智能</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    多模态理解
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    代码生成
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    数据分析
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
@@ -114,7 +136,7 @@ export default function Home() {
               </div>
 
               <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-200 mb-3">群体智能</h3>
@@ -133,6 +155,40 @@ export default function Home() {
                     集体洞察
                   </li>
                 </ul>
+              </div>
+
+              <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-200 mb-3">智能路由器</h3>
+                <p className="text-slate-400 mb-4">自动选择最适合的AI模型</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    任务分析
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    模型选择
+                  </li>
+                  <li className="flex items-center text-sm text-slate-300">
+                    <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                    结果融合
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-8 text-center">
+              <h2 className="text-2xl font-bold text-slate-200 mb-4">AI协同工作流</h2>
+              <p className="text-slate-400 mb-6">Claude + ChatGPT + Gemini = 无限可能</p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <span className="bg-orange-900/50 text-orange-300 px-3 py-1 rounded-full">深度分析</span>
+                <span className="bg-green-900/50 text-green-300 px-3 py-1 rounded-full">创意思维</span>
+                <span className="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full">多模态处理</span>
+                <span className="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">个性化</span>
+                <span className="bg-cyan-900/50 text-cyan-300 px-3 py-1 rounded-full">集体智慧</span>
               </div>
             </div>
           </div>
@@ -378,7 +434,7 @@ export default function Home() {
                 Gensiyo
               </h1>
               <p className="text-xl text-slate-400 mb-12">
-                AI驱动的认知智能平台 - AI协同页面已完善
+                AI驱动的认知智能平台 - 现已集成Claude + ChatGPT + Gemini
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -402,8 +458,8 @@ export default function Home() {
                   onClick={() => setCurrentPage('ai')}
                   className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300 cursor-pointer"
                 >
-                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🤖 AI协同</h3>
-                  <p className="text-slate-400">多AI模型协作平台</p>
+                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🤖 多AI协同</h3>
+                  <p className="text-slate-400">Claude + ChatGPT + Gemini协作</p>
                 </div>
               </div>
             </div>
