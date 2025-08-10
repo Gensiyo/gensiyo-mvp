@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Menu, X, User, LogIn, Brain, BarChart3, Cog, Building2, Mail, Users, Beaker } from 'lucide-react'
+import { Menu, X, User, LogIn, Brain, BarChart3, Cog, Building2, Mail, Users, Beaker, Mirror, CheckCircle, ArrowRight, Star, Target, Zap } from 'lucide-react'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -12,12 +12,315 @@ export default function Home() {
     { id: 'login', name: '🔐 登录' },
     { id: 'profile', name: '👤 个人页面' },
     { id: 'ai', name: '🤖 AI协同' },
+    { id: 'gen-cog-mirror', name: '🧠 Gen-Cog Mirror™' },
     { id: 'analytics', name: '📊 数据分析' },
     { id: 'automation', name: '🔧 自动化' },
     { id: 'enterprise', name: '💼 企业方案' },
     { id: 'community', name: '🌐 社区' },
     { id: 'contact', name: '📞 联系我们' }
   ]
+
+  if (currentPage === 'gen-cog-mirror') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+        <nav className="bg-slate-900/80 border-b border-slate-700/50 p-4">
+          <div className="flex items-center">
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className="flex items-center cursor-pointer"
+            >
+              <div className="w-8 h-8 mr-3">
+                <img src="/gensiyo-logo.svg" alt="Gensiyo Logo" className="w-full h-full" />
+              </div>
+              <span className="text-xl font-bold text-slate-200">Gensiyo</span>
+            </button>
+          </div>
+        </nav>
+        
+        <div className="min-h-screen py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Mirror className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl font-bold text-slate-200 mb-4">Gen-Cog Mirror™</h1>
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+                革命性认知镜像技术，通过多维度分析映射您的思维模式、认知偏好和成长潜力
+              </p>
+            </div>
+
+            {/* Process Flow */}
+            <div className="grid md:grid-cols-5 gap-6 mb-16">
+              {[
+                { title: '登录注册', desc: '创建个人认知档案', icon: LogIn },
+                { title: '自测评估', desc: '多维认知能力测试', icon: Brain },
+                { title: 'AI分析', desc: '深度认知模式解析', icon: Zap },
+                { title: '社区协同', desc: '与他人分享洞察', icon: Users },
+                { title: '个人成长', desc: '持续优化提升', icon: Target }
+              ].map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 text-center hover:bg-slate-700/40 transition-all duration-300">
+                    <step.icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                    <h3 className="font-semibold text-slate-200 mb-2">{step.title}</h3>
+                    <p className="text-sm text-slate-400">{step.desc}</p>
+                  </div>
+                  {i < 4 && (
+                    <ArrowRight className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 text-slate-600 w-6 h-6" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Features */}
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {[
+                {
+                  title: '认知详情分析',
+                  icon: BarChart3,
+                  description: '生成全面的认知分析报告，深度解析思维模式',
+                  features: ['生成详细分析报告', '认知优势识别', '改进建议提供', '个性化学习路径']
+                },
+                {
+                  title: '多AI智能协同',
+                  icon: Brain,
+                  description: '集成Claude、ChatGPT、Gemini提供最佳认知体验',
+                  features: ['多模型协作分析', '个性化对话体验', '认知模式匹配', '智能推荐系统']
+                },
+                {
+                  title: '社区互动分享',
+                  icon: Users,
+                  description: '在保护隐私的前提下分享认知洞察，获得集体智慧',
+                  features: ['匿名认知分享', '群体智慧汇聚', '协作学习环境', '专家指导建议']
+                },
+                {
+                  title: '创新研究实验',
+                  icon: Beaker,
+                  description: '参与前沿认知科学研究，探索人类认知的边界',
+                  features: ['前沿认知研究', '实验性功能测试', '认知边界探索', '科学数据贡献']
+                }
+              ].map((feature, i) => (
+                <div key={i} className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-200">{feature.title}</h3>
+                  </div>
+                  <p className="text-slate-400 mb-4">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, j) => (
+                      <li key={j} className="flex items-center text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-emerald-400 mr-3 flex-shrink-0" />
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Technology Highlights */}
+            <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 mb-16">
+              <h2 className="text-2xl font-bold text-slate-200 mb-6 text-center">核心技术优势</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { title: '深度学习算法', desc: '基于最新神经网络技术，精准分析认知模式' },
+                  { title: '多维度评估', desc: '从逻辑、创意、情感、适应性等多角度全面评估' },
+                  { title: '实时镜像反馈', desc: '即时生成认知镜像，动态跟踪思维变化轨迹' }
+                ].map((tech, i) => (
+                  <div key={i} className="text-center">
+                    <Star className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
+                    <h3 className="font-semibold text-slate-200 mb-2">{tech.title}</h3>
+                    <p className="text-slate-400 text-sm">{tech.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center">
+              <button 
+                onClick={() => setCurrentPage('login')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-lg"
+              >
+                开始认知镜像体验
+              </button>
+              <p className="text-slate-400 mt-4">免费注册，立即开始您的认知探索之旅</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (currentPage === 'ai') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+        <nav className="bg-slate-900/80 border-b border-slate-700/50 p-4">
+          <div className="flex items-center">
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className="flex items-center cursor-pointer"
+            >
+              <div className="w-8 h-8 mr-3">
+                <img src="/gensiyo-logo.svg" alt="Gensiyo Logo" className="w-full h-full" />
+              </div>
+              <span className="text-xl font-bold text-slate-200">Gensiyo</span>
+            </button>
+          </div
+cat > src/app/page.tsx << 'EOF'
+'use client'
+
+import React, { useState } from 'react'
+import { Menu, X, User, LogIn, Brain, BarChart3, Cog, Building2, Mail, Users, Beaker, Mirror, CheckCircle, ArrowRight, Star, Target, Zap } from 'lucide-react'
+
+export default function Home() {
+  const [currentPage, setCurrentPage] = useState('home')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const navigation = [
+    { id: 'home', name: '首页' },
+    { id: 'login', name: '🔐 登录' },
+    { id: 'profile', name: '👤 个人页面' },
+    { id: 'ai', name: '🤖 AI协同' },
+    { id: 'gen-cog-mirror', name: '🧠 Gen-Cog Mirror™' },
+    { id: 'analytics', name: '📊 数据分析' },
+    { id: 'automation', name: '🔧 自动化' },
+    { id: 'enterprise', name: '💼 企业方案' },
+    { id: 'community', name: '🌐 社区' },
+    { id: 'contact', name: '📞 联系我们' }
+  ]
+
+  if (currentPage === 'gen-cog-mirror') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+        <nav className="bg-slate-900/80 border-b border-slate-700/50 p-4">
+          <div className="flex items-center">
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className="flex items-center cursor-pointer"
+            >
+              <div className="w-8 h-8 mr-3">
+                <img src="/gensiyo-logo.svg" alt="Gensiyo Logo" className="w-full h-full" />
+              </div>
+              <span className="text-xl font-bold text-slate-200">Gensiyo</span>
+            </button>
+          </div>
+        </nav>
+        
+        <div className="min-h-screen py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Mirror className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl font-bold text-slate-200 mb-4">Gen-Cog Mirror™</h1>
+              <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+                革命性认知镜像技术，通过多维度分析映射您的思维模式、认知偏好和成长潜力
+              </p>
+            </div>
+
+            {/* Process Flow */}
+            <div className="grid md:grid-cols-5 gap-6 mb-16">
+              {[
+                { title: '登录注册', desc: '创建个人认知档案', icon: LogIn },
+                { title: '自测评估', desc: '多维认知能力测试', icon: Brain },
+                { title: 'AI分析', desc: '深度认知模式解析', icon: Zap },
+                { title: '社区协同', desc: '与他人分享洞察', icon: Users },
+                { title: '个人成长', desc: '持续优化提升', icon: Target }
+              ].map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 text-center hover:bg-slate-700/40 transition-all duration-300">
+                    <step.icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                    <h3 className="font-semibold text-slate-200 mb-2">{step.title}</h3>
+                    <p className="text-sm text-slate-400">{step.desc}</p>
+                  </div>
+                  {i < 4 && (
+                    <ArrowRight className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 text-slate-600 w-6 h-6" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Features */}
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {[
+                {
+                  title: '认知详情分析',
+                  icon: BarChart3,
+                  description: '生成全面的认知分析报告，深度解析思维模式',
+                  features: ['生成详细分析报告', '认知优势识别', '改进建议提供', '个性化学习路径']
+                },
+                {
+                  title: '多AI智能协同',
+                  icon: Brain,
+                  description: '集成Claude、ChatGPT、Gemini提供最佳认知体验',
+                  features: ['多模型协作分析', '个性化对话体验', '认知模式匹配', '智能推荐系统']
+                },
+                {
+                  title: '社区互动分享',
+                  icon: Users,
+                  description: '在保护隐私的前提下分享认知洞察，获得集体智慧',
+                  features: ['匿名认知分享', '群体智慧汇聚', '协作学习环境', '专家指导建议']
+                },
+                {
+                  title: '创新研究实验',
+                  icon: Beaker,
+                  description: '参与前沿认知科学研究，探索人类认知的边界',
+                  features: ['前沿认知研究', '实验性功能测试', '认知边界探索', '科学数据贡献']
+                }
+              ].map((feature, i) => (
+                <div key={i} className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-200">{feature.title}</h3>
+                  </div>
+                  <p className="text-slate-400 mb-4">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, j) => (
+                      <li key={j} className="flex items-center text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-emerald-400 mr-3 flex-shrink-0" />
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Technology Highlights */}
+            <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 mb-16">
+              <h2 className="text-2xl font-bold text-slate-200 mb-6 text-center">核心技术优势</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { title: '深度学习算法', desc: '基于最新神经网络技术，精准分析认知模式' },
+                  { title: '多维度评估', desc: '从逻辑、创意、情感、适应性等多角度全面评估' },
+                  { title: '实时镜像反馈', desc: '即时生成认知镜像，动态跟踪思维变化轨迹' }
+                ].map((tech, i) => (
+                  <div key={i} className="text-center">
+                    <Star className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
+                    <h3 className="font-semibold text-slate-200 mb-2">{tech.title}</h3>
+                    <p className="text-slate-400 text-sm">{tech.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center">
+              <button 
+                onClick={() => setCurrentPage('login')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-lg"
+              >
+                开始认知镜像体验
+              </button>
+              <p className="text-slate-400 mt-4">免费注册，立即开始您的认知探索之旅</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (currentPage === 'ai') {
     return (
@@ -434,24 +737,16 @@ export default function Home() {
                 Gensiyo
               </h1>
               <p className="text-xl text-slate-400 mb-12">
-                AI驱动的认知智能平台 - 现已集成Claude + ChatGPT + Gemini
+                AI驱动的认知智能平台 - Gen-Cog Mirror™ 现已完整上线
               </p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div 
-                  onClick={() => setCurrentPage('profile')}
+                  onClick={() => setCurrentPage('gen-cog-mirror')}
                   className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300 cursor-pointer"
                 >
-                  <h3 className="text-xl font-semibold text-slate-200 mb-2">👤 个人页面</h3>
-                  <p className="text-slate-400">查看认知档案和分析结果</p>
-                </div>
-                
-                <div 
-                  onClick={() => setCurrentPage('login')}
-                  className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300 cursor-pointer"
-                >
-                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🔐 登录体验</h3>
-                  <p className="text-slate-400">完整的登录注册流程</p>
+                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🧠 Gen-Cog Mirror™</h3>
+                  <p className="text-slate-400">革命性认知镜像技术</p>
                 </div>
                 
                 <div 
@@ -460,6 +755,14 @@ export default function Home() {
                 >
                   <h3 className="text-xl font-semibold text-slate-200 mb-2">🤖 多AI协同</h3>
                   <p className="text-slate-400">Claude + ChatGPT + Gemini协作</p>
+                </div>
+                
+                <div 
+                  onClick={() => setCurrentPage('login')}
+                  className="bg-slate-800/40 border border-slate-600/30 rounded-xl p-6 hover:bg-slate-700/40 transition-all duration-300 cursor-pointer"
+                >
+                  <h3 className="text-xl font-semibold text-slate-200 mb-2">🔐 立即体验</h3>
+                  <p className="text-slate-400">注册开始认知探索</p>
                 </div>
               </div>
             </div>
