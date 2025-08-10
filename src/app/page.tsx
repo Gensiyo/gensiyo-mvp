@@ -12,8 +12,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">G</span>
+              <div className="w-8 h-8 mr-3">
+                <img src="/gensiyo-logo.svg" alt="Gensiyo Logo" className="w-full h-full" />
               </div>
               <span className="text-xl font-bold text-slate-200">Gensiyo</span>
             </div>
@@ -32,4 +32,3 @@ export default function Home() {
     </div>
   )
 }
-
